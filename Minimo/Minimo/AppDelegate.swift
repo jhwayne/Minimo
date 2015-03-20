@@ -19,9 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Parse.setApplicationId("tZekq7ApZ9hP2jWlMq5BvKRBLLsKvDWWh5Kyqr9R", clientKey:"m8VmKfKK9pZQMdOqmvw9CtQknxodCmlvXmQ8Ye27")
-        var object = PFObject(className: "User")
-        object.addObject("Jake", forKey: "Name")
-        object.save()
         
         return true
     }
