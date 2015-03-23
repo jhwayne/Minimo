@@ -11,6 +11,9 @@ import Parse
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    
+    @IBOutlet weak var postOfDay: UITextView!
+    
     @IBAction func signOut(sender: AnyObject) {
         
         PFUser.logOut()
@@ -22,9 +25,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        var query = PFQuery(className:"Posts")
+        query.whereKey("objectId", equalTo:"GOJfwKiCAl")
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject!, error: NSError!) -> Void in
+            if error != nil || object == nil{
+            println("The getFirstObject request failed.")
+        } else {
+            // The find succeeded.
+            self.postOfDay.text = object["content"] as NSString
+            println(object["content"])
+            
+        }
     }
+            }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
