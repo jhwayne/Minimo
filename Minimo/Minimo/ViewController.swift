@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var postOfDay: UITextView!
+    @IBOutlet weak var button: UIButton!
     
     @IBAction func signOut(sender: AnyObject) {
         
@@ -71,6 +72,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    @IBAction func circleTapped(sender:UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     

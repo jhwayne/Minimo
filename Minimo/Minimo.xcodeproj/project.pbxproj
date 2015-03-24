@@ -13,6 +13,7 @@
 		090B1E7A1ABCC48B00CDA5D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090B1E791ABCC48B00CDA5D9 /* Images.xcassets */; };
 		090B1E7D1ABCC48B00CDA5D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090B1E7B1ABCC48B00CDA5D9 /* LaunchScreen.xib */; };
 		090B1E891ABCC48B00CDA5D9 /* MinimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B1E881ABCC48B00CDA5D9 /* MinimoTests.swift */; };
+		09665A831AC1213D005627F8 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09665A821AC1213D005627F8 /* CommentViewController.swift */; };
 		F3613DC41ABFACED00C06AFD /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3613DC31ABFACED00C06AFD /* SignUpInViewController.swift */; };
 		F38E3D3F1ABCCB98002F42C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38E3D3A1ABCCB98002F42C0 /* Bolts.framework */; };
 		F38E3D401ABCCB98002F42C0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38E3D3B1ABCCB98002F42C0 /* Parse.framework */; };
@@ -53,6 +54,7 @@
 		090B1E821ABCC48B00CDA5D9 /* MinimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		090B1E871ABCC48B00CDA5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		090B1E881ABCC48B00CDA5D9 /* MinimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimoTests.swift; sourceTree = "<group>"; };
+		09665A821AC1213D005627F8 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		F3613DC31ABFACED00C06AFD /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		F38E3D3A1ABCCB98002F42C0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Minimo/Bolts.framework; sourceTree = "<group>"; };
 		F38E3D3B1ABCCB98002F42C0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Minimo/Parse.framework; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				F38E3D5B1ABCCD21002F42C0 /* MiniMo-Bridging-Header.h */,
 				090B1E721ABCC48B00CDA5D9 /* AppDelegate.swift */,
 				090B1E741ABCC48B00CDA5D9 /* ViewController.swift */,
+				09665A821AC1213D005627F8 /* CommentViewController.swift */,
 				090B1E761ABCC48B00CDA5D9 /* Main.storyboard */,
 				F3613DC31ABFACED00C06AFD /* SignUpInViewController.swift */,
 				090B1E791ABCC48B00CDA5D9 /* Images.xcassets */,
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09665A831AC1213D005627F8 /* CommentViewController.swift in Sources */,
 				090B1E751ABCC48B00CDA5D9 /* ViewController.swift in Sources */,
 				090B1E731ABCC48B00CDA5D9 /* AppDelegate.swift in Sources */,
 				F3613DC41ABFACED00C06AFD /* SignUpInViewController.swift in Sources */,
