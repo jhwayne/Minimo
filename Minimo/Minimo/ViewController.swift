@@ -25,20 +25,43 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        var query = PFQuery(className:"Posts")
+//        query.whereKey("objectId", equalTo:"GOJfwKiCAl")
+//        query.getFirstObjectInBackgroundWithBlock {
+//            (object: PFObject!, error: NSError!) -> Void in
+//            if error != nil || object == nil
+//            {
+//                println("The getFirstObject request failed.")
+//            }
+//            else
+//            {
+//                // The find succeeded.
+//                self.postOfDay.text = object["content"] as NSString
+//                println(object["content"])
+//            }
+//        }
         var query = PFQuery(className:"Posts")
-        query.whereKey("objectId", equalTo:"GOJfwKiCAl")
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject!, error: NSError!) -> Void in
-            if error != nil || object == nil{
-            println("The getFirstObject request failed.")
-        } else {
-            // The find succeeded.
-            self.postOfDay.text = object["content"] as NSString
-            println(object["content"])
-            
-        }
-    }
+        query.whereKey("DisplayToday", equalTo:"Yes")
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects) scores.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        println(object.objectId)
+                        self.postOfDay.text = object["content"] as NSString
+                    }
+                }
+            } else {
+                // Log details of the failure
+                println("Error: \(error) \(error.userInfo!)")
             }
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

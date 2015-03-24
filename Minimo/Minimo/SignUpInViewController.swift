@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SignUpInViewController: UIViewController {
+class SignUpInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var message: UILabel!
@@ -108,11 +108,21 @@ class SignUpInViewController: UIViewController {
         
         activityIndicator.hidden = true
         activityIndicator.hidesWhenStopped = true
+        
+        self.emailAddress.delegate = self
+        self.password.delegate = self;
+
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 
