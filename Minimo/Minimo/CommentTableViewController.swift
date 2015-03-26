@@ -1,33 +1,54 @@
 //
-//  ViewController.swift
-//  Minimo
+//  TimelineTableViewController.swift
+//  SwifferApp
 //
-//  Created by Justin Platz and Jake Wayne on 3/20/15.
-//  Copyright (c) 2015 Team Mo. All rights reserved.
+//  Created by Training on 29/06/14.
+//  Copyright (c) 2014 Training. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class CommentTableViewController: UITableViewController {
     
+    var timelineData:NSMutableArray! = NSMutableArray()
     
-    @IBOutlet weak var postOfDay: UITextView!
-    @IBOutlet weak var button: UIButton!
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+        // Custom initialization
+    }
     
-    @IBAction func signOut(sender: AnyObject) {
-        
-        PFUser.logOut()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("SignUpInViewController") as UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     
-
+    @IBAction func loadData(){
+        timelineData.removeAllObjects()
+        
+        var findTimelineData:PFQuery = PFQuery(className: "Sweets")
+        
+        findTimelineData.findObjectsInBackgroundWithBlock{
+            (objects:[AnyObject]!, error:NSError!)->Void in
+            
+            if error == nil{
+                for object in objects{
+                    let sweet:PFObject = object as PFObject
+                    self.timelineData.addObject(sweet)
+                }
+                
+                let array:NSArray = self.timelineData.reverseObjectEnumerator().allObjects
+                self.timelineData = NSMutableArray(array: array)
+                
+                self.tableView.reloadData()
+                
+            }
+            
+        }
+    }
     
     override func viewDidAppear(animated: Bool) {
+        self.loadData()
         
         if PFUser.currentUser() == nil{
             var loginAlert:UIAlertController = UIAlertController(title: "Sign Up / Login", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
@@ -92,52 +113,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }))
             
             self.presentViewController(loginAlert, animated: true, completion: nil)
-            
-
         }
-        
-        var query = PFQuery(className:"Posts")
-        query.whereKey("DisplayToday", equalTo:"Yes")
-        
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]!, error: NSError!) -> Void in
-            if error == nil {
-                // The find succeeded.
-                println("Successfully retrieved \(objects) scores.")
-                // Do something with the found objects
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        println(object.objectId)
-                        self.postOfDay.text = object["content"] as NSString
-                    }
-                }
-            } else {
-                // Log details of the failure
-                println("Error: \(error) \(error.userInfo!)")
-            }
-        }
-
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var query = PFQuery(className:"Posts")
-//        query.whereKey("objectId", equalTo:"GOJfwKiCAl")
-//        query.getFirstObjectInBackgroundWithBlock {
-//            (object: PFObject!, error: NSError!) -> Void in
-//            if error != nil || object == nil
-//            {
-//                println("The getFirstObject request failed.")
-//            }
-//            else
-//            {
-//                // The find succeeded.
-//                self.postOfDay.text = object["content"] as NSString
-//                println(object["content"])
-//            }
-//        }
         
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -145,14 +131,43 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        self.view.endEditing(true)
-        return false
+    // #pragma mark - Table view data source
+    
+    override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
     }
     
-    @IBAction func circleTapped(sender:UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
+    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return timelineData.count
     }
+    
+    
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:CommentTableViewCell = tableView!.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as CommentTableViewCell
+        
+        let sweet:PFObject = self.timelineData.objectAtIndex(indexPath.row) as PFObject
+        
+        cell.commentTextView.alpha = 0
+        cell.timestampLabel.alpha = 0
+        cell.commentTextView.alpha = 0
+        
+        cell.commentTextView.text = sweet.objectForKey("content") as String
+        
+        
+        var dataFormatter:NSDateFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        cell.timestampLabel.text = dataFormatter.stringFromDate(sweet.createdAt)
+        
+
+        
+        
+        return cell
+    }
+    
     
     
 }

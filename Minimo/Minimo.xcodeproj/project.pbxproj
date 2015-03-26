@@ -13,6 +13,9 @@
 		090B1E7A1ABCC48B00CDA5D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090B1E791ABCC48B00CDA5D9 /* Images.xcassets */; };
 		090B1E7D1ABCC48B00CDA5D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090B1E7B1ABCC48B00CDA5D9 /* LaunchScreen.xib */; };
 		090B1E891ABCC48B00CDA5D9 /* MinimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090B1E881ABCC48B00CDA5D9 /* MinimoTests.swift */; };
+		094C79801AC495E800004000 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094C797F1AC495E800004000 /* CommentTableViewController.swift */; };
+		094C79821AC4962A00004000 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094C79811AC4962A00004000 /* ComposeViewController.swift */; };
+		094C79841AC4983000004000 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094C79831AC4983000004000 /* CommentTableViewCell.swift */; };
 		09665A831AC1213D005627F8 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09665A821AC1213D005627F8 /* CommentViewController.swift */; };
 		F3613DC41ABFACED00C06AFD /* SignUpInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3613DC31ABFACED00C06AFD /* SignUpInViewController.swift */; };
 		F38E3D3F1ABCCB98002F42C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38E3D3A1ABCCB98002F42C0 /* Bolts.framework */; };
@@ -54,6 +57,9 @@
 		090B1E821ABCC48B00CDA5D9 /* MinimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		090B1E871ABCC48B00CDA5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		090B1E881ABCC48B00CDA5D9 /* MinimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimoTests.swift; sourceTree = "<group>"; };
+		094C797F1AC495E800004000 /* CommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
+		094C79811AC4962A00004000 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		094C79831AC4983000004000 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		09665A821AC1213D005627F8 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		F3613DC31ABFACED00C06AFD /* SignUpInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInViewController.swift; sourceTree = "<group>"; };
 		F38E3D3A1ABCCB98002F42C0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Minimo/Bolts.framework; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 				090B1E741ABCC48B00CDA5D9 /* ViewController.swift */,
 				09665A821AC1213D005627F8 /* CommentViewController.swift */,
 				090B1E761ABCC48B00CDA5D9 /* Main.storyboard */,
+				094C79811AC4962A00004000 /* ComposeViewController.swift */,
+				094C797F1AC495E800004000 /* CommentTableViewController.swift */,
+				094C79831AC4983000004000 /* CommentTableViewCell.swift */,
 				F3613DC31ABFACED00C06AFD /* SignUpInViewController.swift */,
 				090B1E791ABCC48B00CDA5D9 /* Images.xcassets */,
 				090B1E7B1ABCC48B00CDA5D9 /* LaunchScreen.xib */,
@@ -295,6 +304,9 @@
 				09665A831AC1213D005627F8 /* CommentViewController.swift in Sources */,
 				090B1E751ABCC48B00CDA5D9 /* ViewController.swift in Sources */,
 				090B1E731ABCC48B00CDA5D9 /* AppDelegate.swift in Sources */,
+				094C79821AC4962A00004000 /* ComposeViewController.swift in Sources */,
+				094C79841AC4983000004000 /* CommentTableViewCell.swift in Sources */,
+				094C79801AC495E800004000 /* CommentTableViewController.swift in Sources */,
 				F3613DC41ABFACED00C06AFD /* SignUpInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
