@@ -129,7 +129,13 @@
                             <outlet property="delegate" destination="tcL-Or-huB" id="HMU-lJ-Anr"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" systemItem="refresh" id="YDc-qf-6z4">
+                            <connections>
+                                <action selector="loadData" destination="tcL-Or-huB" id="smg-eW-vOu"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" prompt="" id="m0g-KL-ZpC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bz5-uJ-fbH">
                             <connections>
@@ -138,7 +144,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBo-SM-fB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
