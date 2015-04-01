@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "097847021AC2530C002B9C2C"
+               BlueprintIdentifier = "86F71A4419608640008EE3B7"
                BuildableName = "SwifferApp.app"
                BlueprintName = "SwifferApp"
                ReferencedContainer = "container:SwifferApp.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "097847171AC2530C002B9C2C"
+               BlueprintIdentifier = "86F71A5119608640008EE3B7"
                BuildableName = "SwifferAppTests.xctest"
                BlueprintName = "SwifferAppTests"
                ReferencedContainer = "container:SwifferApp.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "097847171AC2530C002B9C2C"
+               BlueprintIdentifier = "86F71A5119608640008EE3B7"
                BuildableName = "SwifferAppTests.xctest"
                BlueprintName = "SwifferAppTests"
                ReferencedContainer = "container:SwifferApp.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "097847021AC2530C002B9C2C"
+            BlueprintIdentifier = "86F71A4419608640008EE3B7"
             BuildableName = "SwifferApp.app"
             BlueprintName = "SwifferApp"
             ReferencedContainer = "container:SwifferApp.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "097847021AC2530C002B9C2C"
+            BlueprintIdentifier = "86F71A4419608640008EE3B7"
             BuildableName = "SwifferApp.app"
             BlueprintName = "SwifferApp"
             ReferencedContainer = "container:SwifferApp.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "097847021AC2530C002B9C2C"
+            BlueprintIdentifier = "86F71A4419608640008EE3B7"
             BuildableName = "SwifferApp.app"
             BlueprintName = "SwifferApp"
             ReferencedContainer = "container:SwifferApp.xcodeproj">

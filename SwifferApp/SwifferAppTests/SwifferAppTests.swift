@@ -2,11 +2,10 @@
 //  SwifferAppTests.swift
 //  SwifferAppTests
 //
-//  Created by Justin Platz on 3/24/15.
-//  Copyright (c) 2015 Team Mo. All rights reserved.
+//  Created by Training on 29/06/14.
+//  Copyright (c) 2014 Training. All rights reserved.
 //
 
-import UIKit
 import XCTest
 
 class SwifferAppTests: XCTestCase {
