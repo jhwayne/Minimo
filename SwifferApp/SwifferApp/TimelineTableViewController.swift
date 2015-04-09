@@ -9,6 +9,19 @@
 import UIKit
 
 class TimelineTableViewController: UITableViewController {
+    
+    func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
+        var scanner = NSScanner(string:colorCode)
+        var color:UInt32 = 0;
+        scanner.scanHexInt(&color)
+        
+        let mask = 0x000000FF
+        let r = CGFloat(Float(Int(color >> 16) & mask)/255.0)
+        let g = CGFloat(Float(Int(color >> 8) & mask)/255.0)
+        let b = CGFloat(Float(Int(color) & mask)/255.0)
+        
+        return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
+    }
 
     var timelineData:NSMutableArray! = NSMutableArray()
     
@@ -161,8 +174,8 @@ class TimelineTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return timelineData.count
     }
-
     
+
    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:SweetTableViewCell = tableView!.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as SweetTableViewCell
     
@@ -176,7 +189,7 @@ class TimelineTableViewController: UITableViewController {
 
     
         var dataFormatter:NSDateFormatter = NSDateFormatter()
-        dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        dataFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
         cell.timestampLabel.text = dataFormatter.stringFromDate(sweet.createdAt)
         
         var findSweeter:PFQuery = PFUser.query()
@@ -195,8 +208,47 @@ class TimelineTableViewController: UITableViewController {
             }
         }
     
+//    if indexPath.row % 2 == 0 {
+//    
+//        cell.backgroundColor = UIColor.orangeColor()
+//    
+//    }
+//    else{
+//        
+//        cell.backgroundColor = UIColor.yellowColor()
+//    
+//    }
 
         return cell
     }
-
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+    {cell.contentView.backgroundColor=UIColor.clearColor()
+        
+        var whiteRoundedCornerView:UIView!
+        whiteRoundedCornerView=UIView(frame: CGRectMake(5,10,self.view.bounds.width-10,120))
+        whiteRoundedCornerView.backgroundColor=UIColor(red: 174/255.0, green: 174/255.0, blue: 174/255.0, alpha: 1.0)
+        whiteRoundedCornerView.layer.masksToBounds=false
+        
+        whiteRoundedCornerView.layer.shadowOpacity = 1.55;
+        
+        
+        
+        whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(1, 0);
+        whiteRoundedCornerView.layer.shadowColor=UIColor(red: 53/255.0, green: 143/255.0, blue: 185/255.0, alpha: 1.0).CGColor
+        
+        
+        
+        whiteRoundedCornerView.layer.cornerRadius=3.0
+        whiteRoundedCornerView.layer.shadowOffset=CGSizeMake(-1, -1)
+        whiteRoundedCornerView.layer.shadowOpacity=0.5
+        cell.contentView.addSubview(whiteRoundedCornerView)
+        cell.contentView.sendSubviewToBack(whiteRoundedCornerView)
+        
+        
+    }
 }
+
+
+
+
